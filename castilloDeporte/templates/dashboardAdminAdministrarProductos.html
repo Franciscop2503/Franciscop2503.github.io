@@ -1,0 +1,206 @@
+{% load static %}
+            
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                <link rel="stylesheet" href="{% static 'css/styleDashboardAmin.css' %}">
+                <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+                <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+                <title>Productos</title>
+            </head>
+            <body>
+                <div class="container-fluid">
+
+                    <!--1 fila-->
+                    <div class="row">
+                        <header class="col d-flex justify-content-between align-items-center p2">
+                            <div class="logo"><img src="{% static 'images/LOGO_CASTILLO.png' %}" alt=""></div>
+                            <div class="IS">
+                                <a href="{% url 'adminprinc' %}">Inicio</a>
+                                <a href="{% url 'adminprinc' %}">Salir</a>
+                        </div>
+                        </header>
+                    </div>
+        
+                            <!--2 fila: contenido: barra de navegacion - contenido ppal-->
+                            <div class="row">
+                                <!--Barra de navegacion-->
+                                <div class="col-2 bgNav">
+                        <ul>
+                            <h4>Inventario</h4>
+                            <li><a href="{% url 'admiprod' %}"><i class="fa-regular fa-clipboard"></i>  Administrar productos</a></li>
+                        </ul>
+        
+                        <ul>
+                            <h4>Ventas</h4>
+                            <li><a href="{% url 'admiven' %}"><i class="fa-solid fa-basket-shopping"></i>  Ventas realizadas</a></li>
+                        </ul>
+        
+                        <ul>
+                            <h4>Clientes</h4>
+                            <li><a href="{% url 'admicli' %}"><i class="fa-solid fa-user-gear"></i>  Administrar Clientes</a></li>
+                        </ul>
+        
+                        <ul>
+                            <h4>Envios</h4>
+                            <li><a href="{% url 'admienv' %}"><i class="fa-solid fa-truck"></i>  Envios realizados</a></li>
+                        </ul>
+                        
+                    </div>
+
+                         <!--Contenido principal-->
+            <main class="col-10 espacioP">
+                            <div class="row mt-5 mb-1">
+                                <div class="col aligC">Productos</div>
+                            </div>
+                                                <div class="row mb-2">
+                        <div class="col d-flex justify-content-end">
+                            <div class="pt-5">
+                                <a href="{% url 'regprod' %}" class=" btn ColorR">Registar producto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                            <!--Tabla de busqueda-->
+                            <div class="row mt-1">
+                                <div class="col">
+                                    <table id="example" class="display" style="width:100%">
+                                       
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre producto</th>
+                            <th>Categoria</th>
+                            <th>Marca</th>
+                            <th>Unidades</th>
+                            <th>Precio</th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PD001</td>
+                            <td>Balon Golty</td>
+                            <td>Futbol</td>
+                            <td>Golty</td>
+                            <td>10</td>
+                            <td>32000</td>
+                            
+                            <td>
+                                <a href="{% url 'editprod' %}"><i class="fa-solid fa-pen"></i></a>
+                                <a href="{% url 'eliprod' %}"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PD002</td>
+                            <td>Balon Basquetball Champions</td>
+                            <td>Basquetball</td>
+                            <td>Golty</td>
+                            <td>3</td>
+                            <td>40000</td>
+                            
+                            <td>
+                                <a href="{% url 'editprod' %}"><i class="fa-solid fa-pen"></i></a>
+                                <a href="{% url 'eliprod' %}"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PD003</td>
+                            <td>Biciclieta GW</td>
+                            <td>Ciclismo</td>
+                            <td>GW</td>
+                            <td>4</td>
+                            <td>500000</td>
+                            
+                            <td>
+                                <a href="{% url 'editprod' %}"><i class="fa-solid fa-pen"></i></a>
+                                <a href="{% url 'eliprod' %}"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PD004</td>
+                            <td>Guantes gym</td>
+                            <td>Gimnasio</td>
+                            <td>Adidas</td>
+                            <td>9</td>
+                            <td>69000</td>
+                            
+                            <td>
+                                <a href="{% url 'editprod' %}"><i class="fa-solid fa-pen"></i></a>
+                                <a href="{% url 'eliprod' %}"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PD005</td>
+                            <td>Balon Wilson NFL</td>
+                            <td>Futbol americano</td>
+                            <td>Wilson</td>
+                            <td>5</td>
+                            <td>100000</td>
+                            
+                            <td>
+                                <a href="{% url 'editprod' %}"><i class="fa-solid fa-pen"></i></a>
+                                <a href="{% url 'eliprod' %}"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                    
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre producto</th>
+                            <th>Categoria</th>
+                            <th>Marca</th>
+                            <th>Unidades</th>
+                            <th>Precio</th>
+                            <th></th>
+                            
+                        </tr>
+                    </tfoot>                                   </table>
+                    <div class="row mb-2">
+                        <div class="col d-flex justify-content-end mt-2">
+                            <div class="col d-flex justify-content-end " >
+                        <a href="{% url 'admica' %}" class="btn btn-secondary" style="margin: 0.2vw">Categorias</a>
+                        <a href="{% url 'admient' %}" class="btn btn-secondary" style="margin: 0.2vw">Entradas</a>
+                        <a href="{% url 'admisali' %}" class="btn btn-secondary" style="margin: 0.2vw">Salidas</a>
+                    </div>
+
+                        </div>
+                    </div>
+                                </div>
+                            </div>
+
+                        </main>
+
+
+
+        </div>
+
+
+    </div>
+    <footer>
+        <div>
+            <p>El Castillo del deporte</p>
+            <p>2022</p>
+
+        </div>
+    </footer>
+    <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+            <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+            <!--codigo js de datatable-->
+            <script>
+                $(document).ready(function () {
+                    $('#example').DataTable();
+                });
+            </script>
+</body>
+</html>

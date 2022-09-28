@@ -1,0 +1,13 @@
+.espacioP{
+    width: auto;
+    align-items: center;
+}
+
+.needs-validation{
+    align-items: center;
+}
+
+.container{
+    width: 100%;
+    justify-content: center;
+}
